@@ -1,11 +1,16 @@
 {
   "name": "jwt-auth-utility",
   "version": "1.0.8",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "node dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "jwt",
     "JSON Web Tokens",
@@ -23,5 +28,10 @@
   "description": "",
   "dependencies": {
     "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.0.10",
+    "typescript": "^5.8.3"
   }
 }
